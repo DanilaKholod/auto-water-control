@@ -1,0 +1,106 @@
+@font-face {
+    font-family: 'MorfinSans';
+    src: url('MorfinSans.woff2') format('woff2'),
+         url('MorfinSans.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'MorfinSans', Arial, sans-serif;
+    background-color: #9ACBE1;
+    height: 100vh;
+    margin: 0;
+    min-height: 100vh;
+}
+
+.login-container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    text-align: center;
+    margin: 0 60px; /* расстояние между линиями и формой */
+}
+
+h1 {
+    color: #000000;
+    margin-bottom: 30px;
+    font-size: 32px; /* уменьшен размер шрифта для вмещения текста */
+    font-family: 'MorfinSans', Arial, sans-serif;
+    font-weight: 400;
+    letter-spacing: 1px;
+    width: 333px;
+    height: 35px;
+    line-height: 35px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    display: block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.input-group {
+    margin-bottom: 35px; /* увеличен отступ между группами для соответствия макету */
+}
+
+label {
+    display: block;
+    margin-bottom: 7px;      /* расстояние между label и input */
+    color: #000;
+    font-weight: 400;        /* Regular */
+    font-size: 20px;         /* размер шрифта по макету */
+    font-family: 'MorfinSans', Arial, sans-serif;
+    text-align: left;
+    padding-left: 2px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #000;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 20px;         /* размер шрифта в поле ввода */
+    font-family: 'MorfinSans', Arial, sans-serif;
+    font-weight: 400;
+}
+
+button {
+    background-color: #35739D; /* новый цвет кнопки */
+    color: #FFFFFF;            /* цвет текста */
+    border: none;
+    padding: 0;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 263px;              /* ширина кнопки */
+    height: 50px;              /* высота кнопки */
+    font-size: 24px;           /* увеличенный размер шрифта */
+    font-family: 'MorfinSans', Arial, sans-serif;
+    margin: 0 auto;
+    display: block;
+    transition: background-color 0.3s;
+    font-weight: normal;
+    letter-spacing: 1px;
+}
+
+button:hover {
+    background-color: #28587a;
+}
+
+.main-layout {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.vline {
+    width: 10px;
+    height: 100vh;
+    background: #fff;
+    flex-shrink: 0;
+}
