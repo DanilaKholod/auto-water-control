@@ -27,11 +27,11 @@ body {
 h1 {
     color: #000000;
     margin-bottom: 30px;
-    font-size: 32px; /* уменьшен размер шрифта для вмещения текста */
+    font-size: 40px; /* уменьшен размер шрифта для вмещения текста */
     font-family: 'MorfinSans', Arial, sans-serif;
     font-weight: 400;
     letter-spacing: 1px;
-    width: 333px;
+    width: 360px;
     height: 35px;
     line-height: 35px;
     margin-left: auto;
@@ -78,7 +78,7 @@ button {
     cursor: pointer;
     width: 263px;              /* ширина кнопки */
     height: 50px;              /* высота кнопки */
-    font-size: 24px;           /* увеличенный размер шрифта */
+    font-size: 40px;           /* увеличенный размер шрифта */
     font-family: 'MorfinSans', Arial, sans-serif;
     margin: 0 auto;
     display: block;
