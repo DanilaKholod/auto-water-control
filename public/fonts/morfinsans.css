@@ -1,0 +1,6 @@
+@font-face {
+	font-family: 'MorfinSans';
+	src: url('MorfinSans-Regular.woff2') format('woff2') url('MorfinSans-Regular.woff') format('woff');
+	font-weight: 400;
+	font-style: normal;
+}
