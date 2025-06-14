@@ -10,6 +10,7 @@ import pandas as pd
 from io import StringIO
 from bson import ObjectId
 from bson.json_util import dumps, loads
+import os
 
 # Настройка логирования
 logging.basicConfig(level=logging.INFO)
@@ -32,8 +33,10 @@ app.add_middleware(
 
 # Подключение к MongoDB
 try:
-    mongo_client = MongoClient("mongodb+srv://pnpandrew79:1@cluster0.ipeua.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
-    db = mongo_client["sensors_db"]
+    mongo_uri = os.environ.get("MONGO_URI", "mongodb://localhost:27017/")
+    mongo_db = os.environ.get("MONGO_DB", "sensors_db")
+    mongo_client = MongoClient(mongo_uri)
+    db = mongo_client[mongo_db]
     sensor_data_collection = db["sensor_readings"]
     notifications_collection = db["notifications"]
     logger.info("Successfully connected to MongoDB")
@@ -254,6 +257,11 @@ async def resolve_notification(notification_id: str):
     except Exception as e:
         logger.error(f"Error resolving notification: {str(e)}")
         raise HTTPException(status_code=500, detail=str(e))
+
+
+@app.get("/")
+async def root():
+    return {"message": "Auto Water Control API is running."}
 
 
 # Вспомогательные функции
