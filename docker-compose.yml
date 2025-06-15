@@ -1,24 +1,18 @@
-version: "3.8"
 
 services:
-  mongo:
-    image: mongo:6
-    restart: always
-    environment:
-      MONGO_INITDB_DATABASE: sensors_db
+  fishback:
+    container_name: fishback
+    build:
+      context: .
+      dockerfile: Dockerfile
     ports:
-      - "27017:27017"
-    volumes:
-      - mongo_data:/data/db
+      - "8080:8080"
 
-  backend:
+
+  fishfront:
+    container_name: fishfront
     build: .
-    env_file:
-      - .env
     ports:
-      - "8000:8000"
-    depends_on:
-      - mongo
+      - "3000:3000"
 
-volumes:
-  mongo_data:
+

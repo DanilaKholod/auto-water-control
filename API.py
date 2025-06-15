@@ -33,16 +33,15 @@ app.add_middleware(
 
 # Подключение к MongoDB
 try:
-    mongo_uri = os.environ.get("MONGO_URI", "mongodb://localhost:27017/")
-    mongo_db = os.environ.get("MONGO_DB", "sensors_db")
-    mongo_client = MongoClient(mongo_uri)
-    db = mongo_client[mongo_db]
+    mongo_client = MongoClient("mongodb+srv://pnpandrew79:1@cluster0.ipeua.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
+    db = mongo_client["sensors_db"]
     sensor_data_collection = db["sensor_readings"]
     notifications_collection = db["notifications"]
     logger.info("Successfully connected to MongoDB")
 except PyMongoError as e:
     logger.error(f"Error connecting to MongoDB: {str(e)}")
     raise
+
 
 
 # Модели Pydantic
