@@ -10,6 +10,7 @@ import pandas as pd
 from io import StringIO
 from bson import ObjectId
 from bson.json_util import dumps, loads
+import os
 
 # Настройка логирования
 logging.basicConfig(level=logging.INFO)
@@ -40,6 +41,7 @@ try:
 except PyMongoError as e:
     logger.error(f"Error connecting to MongoDB: {str(e)}")
     raise
+
 
 
 # Модели Pydantic
@@ -254,6 +256,11 @@ async def resolve_notification(notification_id: str):
     except Exception as e:
         logger.error(f"Error resolving notification: {str(e)}")
         raise HTTPException(status_code=500, detail=str(e))
+
+
+@app.get("/")
+async def root():
+    return {"message": "Auto Water Control API is running."}
 
 
 # Вспомогательные функции

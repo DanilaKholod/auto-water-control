@@ -1,0 +1,28 @@
+
+services:
+  fishback:
+    container_name: fishback
+    build:
+      context: ./backend
+      dockerfile: ./Dockerfile
+    ports:
+      - "8000:8000"
+    networks:
+      - fish-network
+
+
+  fishfront:
+    container_name: fishfront
+    build:
+      context: ./frontend
+      dockerfile: ./Dockerfile
+    ports:
+      - "3000:3000"
+    networks:
+      - fish-network
+
+networks:
+  fish-network:
+    driver: bridge
+
+
