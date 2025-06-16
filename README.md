@@ -24,7 +24,7 @@
 - **Backend:** FastAPI (Python)
 - **Database:** MongoDB
 - **Frontend:** Next.js (TypeScript, React)
-- **Docker** и для контейнеризации
+- **Docker** для контейнеризации
 
 ## Структура проекта
 
